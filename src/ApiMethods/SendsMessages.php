@@ -398,6 +398,28 @@ trait SendsMessages
 
     /**
      * @param array{
+     *     chat_id: int|string,
+     *     star_count: int,
+     *     media: InputPaidMedia[],
+     *     caption: string,
+     *     parse_mode: string,
+     *     caption_entities: MessageEntity[],
+     *     show_caption_above_media: bool,
+     *     disable_notification: bool,
+     *     parse_content: bool,
+     *     reply_parameters: ReplyParameters,
+     *     reply_markup: InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply,
+     * } $data
+     *
+     * @throws \PhpTelegramBot\Core\Exceptions\TelegramException
+     */
+    public function sendPaidMedia(array $data = []): Message
+    {
+        return $this->send(__FUNCTION__, $data, Message::class);
+    }
+
+    /**
+     * @param array{
      *     business_connection_id: string,
      *     chat_id: int|string,
      *     message_thread_id: int,

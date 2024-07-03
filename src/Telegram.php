@@ -55,6 +55,9 @@ class Telegram
             'sendSticker'            => ['sticker'],
             'sendVideo'              => ['video', 'thumbnail'],
             'sendVideoNote'          => ['video_note', 'thumbnail'],
+            'sendPaidMedia'          => [
+                'media' => ['media', 'thumbnail'],
+            ],
             'sendVoice'              => ['voice'],
             'setChatPhoto'           => ['photo'],
             'setStickerSetThumbnail' => ['thumbnail'],
@@ -62,6 +65,7 @@ class Telegram
             'uploadStickerFile'      => ['sticker'],
         ];
     }
+    // <InputPaidMedia>.media
 
     public function __construct(
         #[\SensitiveParameter]

@@ -37,6 +37,7 @@ use PhpTelegramBot\Core\Entities\ReactionType\ReactionType;
  * @method string|null               getInviteLink()                      Optional. Primary invite link, for groups, supergroups and channel chats
  * @method Message|null              getPinnedMessage()                   Optional. The most recent pinned message (by sending date).
  * @method ChatPermissions|null      getPermissions()                     Optional. Default chat member permissions, for groups and supergroups
+ * @method bool                      canSendPaidMedia()                   Optional. True, if paid media messages can be sent or forwarded to the channel chat. The field is available only for channel chats.
  * @method int|null                  getSlowModeDelay()                   Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds
  * @method int|null                  getUnrestrictBoostCount()            Optional. For supergroups, the minimum number of boosts that a non-administrator user needs to add in order to ignore slow mode and chat permissions
  * @method int|null                  getMessageAutoDeleteTime()           Optional. The time after which all messages sent to the chat will be automatically deleted; in seconds
@@ -74,6 +75,7 @@ class ChatFullInfo extends Entity implements AllowsBypassingGet
             'is_forum'                                => false,
             'has_private_forwards'                    => false,
             'has_restricted_voice_and_video_messages' => false,
+            'can_send_paid_media'                     => false,
             'has_aggressive_anti_spam_enabled'        => false,
             'has_hidden_members'                      => false,
             'has_protected_content'                   => false,

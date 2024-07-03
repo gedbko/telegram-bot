@@ -13,6 +13,7 @@ use PhpTelegramBot\Core\Entities\MessageOrigin\MessageOrigin;
  * @method Animation|null          getAnimation()          Optional. Message is an animation, information about the animation
  * @method Audio|null              getAudio()              Optional. Message is an audio file, information about the file
  * @method Document|null           getDocument()           Optional. Message is a general file, information about the file
+ * @method PaidMediaInfo|null      getPaidMedia()          Optional. Message contains paid media; information about the paid media
  * @method PhotoSize[]|null        getPhoto()              Optional. Message is a photo, available sizes of the photo
  * @method Sticker|null            getSticker()            Optional. Message is a sticker, information about the sticker
  * @method Story|null              getStory()              Optional. Message is a forwarded story
@@ -41,6 +42,7 @@ class ExternalReplyInfo extends Entity implements AllowsBypassingGet
             'animation'            => Animation::class,
             'audio'                => Audio::class,
             'document'             => Document::class,
+            'paid_media'           => PaidMediaInfo::class,
             'photo'                => [PhotoSize::class],
             'sticker'              => Sticker::class,
             'story'                => Story::class,
